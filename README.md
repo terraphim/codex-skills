@@ -132,8 +132,11 @@ Codex loads skills by precedence (highest to lowest):
 
 ## Related
 
-- [terraphim/opencode-skills](https://github.com/terraphim/opencode-skills) - OpenCode version
-- [terraphim/terraphim-skills](https://github.com/terraphim/terraphim-skills) - Claude Code plugin version
+| Repository | Platform | Installation |
+|------------|----------|--------------|
+| [terraphim/codex-skills](https://github.com/terraphim/codex-skills) | OpenAI Codex CLI | `~/.codex/skills/` |
+| [terraphim/opencode-skills](https://github.com/terraphim/opencode-skills) | OpenCode | `~/.config/opencode/skill/` |
+| [terraphim/terraphim-skills](https://github.com/terraphim/terraphim-skills) | Claude Code | Plugin marketplace |
 
 ## License
 
