@@ -42,7 +42,7 @@ codex /skills
 codex "use $disciplined-research to analyze this codebase"
 ```
 
-## Available Skills (29)
+## Available Skills (30)
 
 ### Disciplined Development (V-Model)
 

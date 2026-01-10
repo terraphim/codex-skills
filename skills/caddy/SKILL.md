@@ -1,7 +1,12 @@
+---
+name: caddy
+description: Comprehensive Caddy server management across environments with validation-first, zero-downtime deployments, and secret-safe operations.
+---
+
 # Caddy Server Management Skill
 
 **Version:** 1.0.0
-**Author:** Claude Code
+**Author:** Codex CLI
 **Purpose:** Comprehensive Caddy web server management across multiple environments
 
 ## Overview and Purpose
@@ -42,7 +47,7 @@ This skill provides enterprise-grade Caddy server management across local develo
    ```bash
    # Verify 1Password skill is available
    which op && op --version
-   # See: ~/.claude/skills/1password-secrets.md
+   # See: ~/.codex/skills/1password-secrets/SKILL.md
    ```
 
 4. **Systemd** (on production servers)
@@ -85,7 +90,7 @@ This skill operates across 3 servers with different characteristics:
 - **Status**: Properly managed via systemd
 - **✓ Reference**: Clean 41-line config with snippets
 
-Server configuration details: `~/.docs/caddy-skill/servers.json`
+Server configuration details: `~/.codex/skills/caddy/servers.json`
 
 ---
 
@@ -192,7 +197,7 @@ Found 3 Caddyfiles matching 'auth' on bigbox:
 **Step 1: Load Server Configuration**
 ```bash
 # Read servers.json
-cat ~/.docs/caddy-skill/servers.json | jq -r '.servers.bigbox'
+cat ~/.codex/skills/caddy/servers.json | jq -r '.servers.bigbox'
 ```
 
 **Step 2: Execute Search**
@@ -401,7 +406,7 @@ cat caddy_complete.env | grep "VAR_NAME="
 **Step 5: Detect Secrets**
 ```bash
 # Coordinate with 1Password skill to detect plaintext secrets
-# See: ~/.claude/skills/1password-secrets.md Workflow 1
+# See: ~/.codex/skills/1password-secrets/SKILL.md Workflow 1
 ```
 
 ### Validation Checks
@@ -823,7 +828,7 @@ For bigbox migration, this skill will:
 4. Update systemd service to use `op run --no-masking`
 5. Verify migration successful
 
-See: `~/.claude/skills/1password-secrets.md` for detailed secret management workflows.
+See: `~/.codex/skills/1password-secrets/SKILL.md` for detailed secret management workflows.
 
 ---
 
@@ -867,7 +872,7 @@ See: `~/.claude/skills/1password-secrets.md` for detailed secret management work
 
 ## Related Skills
 
-- **1Password Secret Management**: `~/.claude/skills/1password-secrets.md`
+- **1Password Secret Management**: `~/.codex/skills/1password-secrets/SKILL.md`
 - **Systemd Management**: For service lifecycle operations
 - **SSH Management**: For remote server access
 
@@ -876,11 +881,11 @@ See: `~/.claude/skills/1password-secrets.md` for detailed secret management work
 **Version History:**
 - 1.0.0 (2025-12-29): Initial release with core workflows (Discovery, Validation, Format, Deploy, Status)
 
-**Maintainer:** Claude Code
+**Maintainer:** Codex CLI
 **License:** MIT
 **Documentation:** This file
-**Server Configuration:** `~/.docs/caddy-skill/servers.json`
-**Pattern Library:** `~/.docs/caddy-skill/patterns/` (coming soon)
+**Server Configuration:** `~/.codex/skills/caddy/servers.json`
+**Pattern Library:** `~/.codex/skills/caddy/patterns/` (coming soon)
 
 ---
 

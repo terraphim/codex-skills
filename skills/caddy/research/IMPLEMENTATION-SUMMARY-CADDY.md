@@ -12,14 +12,14 @@ Successfully implemented core Caddy Server Management skill following the approv
 
 ### Core Skill Files
 
-1. **`~/.claude/skills/caddy.md`** (850+ lines)
+1. **`~/.codex/skills/caddy/SKILL.md`** (850+ lines)
    - Complete skill documentation with 5 core workflows
    - Multi-server support (local, bigbox, registry)
    - Prerequisites and server configuration guide
    - Integration with 1Password skill
    - Quick reference and troubleshooting
 
-2. **`~/.docs/caddy-skill/servers.json`** (configuration)
+2. **`~/.codex/skills/caddy/servers.json`** (configuration)
    - Detailed configuration for all 3 servers
    - SSH connection details
    - Binary paths and versions
@@ -27,7 +27,7 @@ Successfully implemented core Caddy Server Management skill following the approv
    - Migration status tracking
    - Search paths and defaults
 
-3. **`~/.docs/caddy-skill/patterns/`** (directory created)
+3. **`~/.codex/skills/caddy/patterns/`** (directory created)
    - Ready for pattern library (Phase D)
 
 ## Implemented Workflows (MVP)
@@ -391,7 +391,7 @@ While automated migration is not yet implemented, the skill provides guidance:
 
 1. **Use 1Password Skill to Migrate Secrets:**
    ```
-   Use: ~/.claude/skills/1password-secrets.md
+   Use: ~/.codex/skills/1password-secrets/SKILL.md
    Workflow 2: Generate Template from caddy_complete.env
    ```
 

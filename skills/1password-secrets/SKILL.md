@@ -1,7 +1,12 @@
+---
+name: 1password-secrets
+description: Secure secret management with 1Password CLI: detect secrets, generate templates, inject secrets, and audit compliance.
+---
+
 # 1Password Secret Management Skill
 
 **Version:** 1.0.0
-**Author:** Claude Code
+**Author:** Codex CLI
 **Purpose:** Secure secret management using 1Password CLI
 
 ## Overview and Purpose
@@ -85,7 +90,7 @@ User: "Scan /path/to/.env for secrets"
 
 Assistant Process:
 1. Check op CLI: `which op`
-2. Read pattern database: ~/.docs/1password-skill/secret-patterns.json
+2. Read pattern database: ~/.codex/skills/1password-secrets/secret-patterns.json
 3. Read target file line by line
 4. Apply regex patterns to each line
 5. For each match:
@@ -113,7 +118,7 @@ op whoami || echo "ERROR: Not signed in to 1Password"
 
 **Step 2: Load Secret Patterns**
 ```bash
-cat ~/.docs/1password-skill/secret-patterns.json | jq -r '.patterns[]'
+cat ~/.codex/skills/1password-secrets/secret-patterns.json | jq -r '.patterns[]'
 ```
 
 **Step 3: Scan File**
@@ -1157,6 +1162,6 @@ systemctl restart myservice
 **Version History:**
 - 1.0.0 (2025-12-29): Initial release with 6 core workflows
 
-**Maintainer:** Claude Code
+**Maintainer:** Codex CLI
 **License:** MIT
 **Documentation:** This file

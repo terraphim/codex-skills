@@ -6,7 +6,7 @@
 
 ## 1. Summary of Target Behavior
 
-A comprehensive Claude Code skill that manages Caddy web server across multiple environments (local development, bigbox production, registry production). The skill will:
+A comprehensive Codex CLI skill that manages Caddy web server across multiple environments (local development, bigbox production, registry production). The skill will:
 
 1. **Discover Caddyfiles** across 3 servers using fast search (mdfind locally, find on remote)
 2. **Validate syntax** before deployment to prevent downtime
@@ -233,16 +233,16 @@ The skill enforces zero-downtime reloads, mandatory validation, and 1Password in
 
 | File Path | Action | Responsibility | Dependencies |
 |-----------|--------|----------------|--------------|
-| `~/.claude/skills/caddy.md` | Create | Main skill documentation and workflows | 1Password skill |
-| `~/.docs/caddy-skill/servers.json` | Create | Server configuration (paths, SSH, binaries) | None |
-| `~/.docs/caddy-skill/patterns/` | Create | Caddyfile pattern library | None |
+| `~/.codex/skills/caddy/SKILL.md` | Create | Main skill documentation and workflows | 1Password skill |
+| `~/.codex/skills/caddy/servers.json` | Create | Server configuration (paths, SSH, binaries) | None |
+| `~/.codex/skills/caddy/patterns/` | Create | Caddyfile pattern library | None |
 | `~/.docs/caddy-skill/snippets/` | Create | Extracted common snippets | None |
 | `~/.docs/caddy-skill/migration-plan-bigbox.md` | Create | Systemd migration guide for bigbox | None |
 
 ### Skill File Structure
 
 ```markdown
-~/.claude/skills/caddy.md
+~/.codex/skills/caddy/SKILL.md
 ├── Overview and Purpose
 ├── Prerequisites
 ├── Server Configuration
@@ -271,7 +271,7 @@ The skill enforces zero-downtime reloads, mandatory validation, and 1Password in
 
 ### Server Configuration File
 
-`~/.docs/caddy-skill/servers.json`:
+`~/.codex/skills/caddy/servers.json`:
 ```json
 {
   "local": {
@@ -342,7 +342,7 @@ The skill enforces zero-downtime reloads, mandatory validation, and 1Password in
 **Purpose:** Find Caddyfiles across servers
 **Deployable:** Yes (read-only operations)
 
-1. Create `~/.claude/skills/caddy.md`
+1. Create `~/.codex/skills/caddy/SKILL.md`
 2. Document prerequisites (Caddy installed, SSH configured)
 3. Implement "Workflow 1: Discover Caddyfiles":
    - Accept server name (local|bigbox|registry) or "all"

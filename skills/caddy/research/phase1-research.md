@@ -1,14 +1,14 @@
-# Research Document: Claude Agent Skill for Caddy Server Management
+# Research Document: Codex Agent Skill for Caddy Server Management
 
 **Date:** 2025-12-29
 **Phase:** 1 - Disciplined Research
-**Author:** Claude Code (Disciplined Research Skill)
+**Author:** Codex CLI (Disciplined Research Skill)
 
 ## 1. Problem Restatement and Scope
 
 ### Problem Statement
 
-The user needs a comprehensive Claude agent skill to manage Caddy web server configurations across multiple environments (local development and production servers). Currently, there are 28+ Caddyfiles spread across local laptop and bigbox server, with varying complexity (12-324 lines) and different use cases (authentication, reverse proxy, WebSocket, security headers, Docker deployments).
+The user needs a comprehensive Codex agent skill to manage Caddy web server configurations across multiple environments (local development and production servers). Currently, there are 28+ Caddyfiles spread across local laptop and bigbox server, with varying complexity (12-324 lines) and different use cases (authentication, reverse proxy, WebSocket, security headers, Docker deployments).
 
 ### Scope
 
@@ -240,11 +240,11 @@ Remote (bigbox):
 ### 4.4 User Experience Constraints
 
 **Constraint 12: CLI Tool Context**
-- **Implication**: Skill runs within Claude Code CLI
+- **Implication**: Skill runs within Codex CLI
 - **Why it matters**: Available tools are Bash, Read, Write, Edit, Grep, Glob
 - **Shapes solution**: Cannot use interactive UIs, must use CLI-friendly patterns
 
-**Constraint 13: User Preferences (from CLAUDE.md)**
+**Constraint 13: User Preferences (from AGENTS.md)**
 - No timeout command on macOS
 - Use IDE diagnostics for errors
 - Track tasks in GitHub issues
@@ -319,7 +319,7 @@ Remote (bigbox):
 - **Impact**: High (incomplete state)
 - **De-risk**: Use tmux on remote side, idempotent operations
 
-**RISK 4: Secret Exposure in Claude Code Context**
+**RISK 4: Secret Exposure in Codex CLI Context**
 - **Category**: Security
 - **Likelihood**: Low (depends on user practices)
 - **Impact**: High (credential compromise)
@@ -437,7 +437,7 @@ Remote (bigbox):
 4. **Custom Build Process**: How is the custom Caddy binary (with security plugin) built? Is there a build script or Docker image?
    - **Why it matters**: Skill should guide plugin installation for new environments
 
-5. **Secret Management**: Do you use 1Password CLI (`op`) for managing Caddy secrets? Noticed user's CLAUDE.md mentions it.
+5. **Secret Management**: Do you use 1Password CLI (`op`) for managing Caddy secrets? Noticed user's AGENTS.md mentions it.
    - **Why it matters**: Skill should integrate with existing secret management
 
 ### High-Priority Questions (Should Answer)
@@ -462,7 +462,7 @@ Remote (bigbox):
 After this research is approved, Phase 2 (Disciplined Design) will produce:
 
 1. **Skill Architecture Document**:
-   - Tool usage patterns (which Claude Code tools for which tasks)
+   - Tool usage patterns (which Codex CLI tools for which tasks)
    - Command templates for common operations
    - Error handling strategies
 

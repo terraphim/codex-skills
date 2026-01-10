@@ -12,14 +12,14 @@ Successfully implemented comprehensive 1Password secret management skill followi
 
 ### Core Skill Files
 
-1. **`~/.claude/skills/1password-secrets.md`** (1,162 lines)
+1. **`~/.codex/skills/1password-secrets/SKILL.md`** (1,162 lines)
    - Complete skill documentation with 6 workflows
    - Prerequisites and installation guide
    - All security best practices
    - Troubleshooting guide
    - Quick reference section
 
-2. **`~/.docs/1password-skill/secret-patterns.json`** (350 lines)
+2. **`~/.codex/skills/1password-secrets/secret-patterns.json`** (350 lines)
    - 26 secret detection patterns
    - Confidence scoring (high/medium)
    - Cloud-specific patterns (AWS, GCP, Azure, GitHub, Stripe, etc.)

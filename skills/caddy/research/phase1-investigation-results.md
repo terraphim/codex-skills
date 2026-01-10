@@ -198,7 +198,7 @@ JWT_SHARED_KEY=terraphim-jwt-shared-key-5c28cc33679085bfd8189be4cbbaf913b5b83d38
 ```
 
 ### Required Migration Pattern
-Per user's CLAUDE.md mandate:
+Per user's AGENTS.md mandate:
 > "you are not allowed to overwrite .env files, use op inject if required or op run --no-masking to start docker compose or other services"
 
 **Proper Pattern:**
