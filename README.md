@@ -42,13 +42,14 @@ codex /skills
 codex "use $disciplined-research to analyze this codebase"
 ```
 
-## Available Skills (30)
+## Available Skills (32)
 
 ### Disciplined Development (V-Model)
 
 | Skill | Phase | Description |
 |-------|-------|-------------|
 | `disciplined-research` | 1 | Deep problem understanding before design |
+| `disciplined-quality-evaluation` | 1.5 / 2.5 | KLS quality evaluation for research/design docs |
 | `disciplined-design` | 2 | Create implementation plans from research |
 | `disciplined-specification` | 2.5 | Probe specs through user interviews |
 | `disciplined-implementation` | 3 | Execute plans step by step with tests |
@@ -118,6 +119,7 @@ codex "use $disciplined-research to analyze this codebase"
 |-------|-------------|
 | `1password-secrets` | 1Password CLI secret management |
 | `caddy` | Caddy server configuration |
+| `xero` | Xero Accounting API integration |
 
 ## Skill Discovery
 
@@ -129,6 +131,16 @@ Codex loads skills by precedence (highest to lowest):
 | Repository | `.codex/skills/` at repo root |
 | User | `~/.codex/skills/` |
 | System | `/etc/codex/skills/` |
+
+## Agents (V-Model Orchestrators)
+
+This repository also ships orchestrator agents in `agents/` to run full V-model workflows:
+
+- `left-side-of-v` — Research + Design with quality evaluation gates
+- `execution-orchestrator` — Implementation + quality evaluation + quality gate
+- `right-side-of-v` — Verification + Validation with defect loop-back
+
+Install agents by copying them to `~/.codex/agents/` or `.codex/agents/` at your repo root. Then select the agent using your CLI's agent/profile selection mechanism.
 
 ## Related
 

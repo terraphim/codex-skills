@@ -6,7 +6,7 @@
 
 ## 1. Summary of Target Behavior
 
-A comprehensive Codex CLI skill that provides secure secret management using 1Password CLI (`op`). The skill will:
+A comprehensive Claude Code skill that provides secure secret management using 1Password CLI (`op`). The skill will:
 
 1. **Detect plaintext secrets** in environment files, configs, and codebases
 2. **Generate templates** converting `.env` files to `.env.template` with `op://` references
@@ -15,7 +15,7 @@ A comprehensive Codex CLI skill that provides secure secret management using 1Pa
 5. **Audit configurations** to ensure no plaintext secrets exist
 6. **Provide patterns** for safe secret handling across different tools (systemd, Docker, shell)
 
-The skill enforces the user's AGENTS.md mandate: "never overwrite .env files, use op inject if required or op run --no-masking to start services."
+The skill enforces the user's CLAUDE.md mandate: "never overwrite .env files, use op inject if required or op run --no-masking to start services."
 
 ## 2. Key Invariants and Acceptance Criteria
 
@@ -157,14 +157,14 @@ The skill enforces the user's AGENTS.md mandate: "never overwrite .env files, us
 
 | File Path | Action | Responsibility | Dependencies |
 |-----------|--------|----------------|--------------|
-| `~/.codex/skills/1password-secrets/SKILL.md` | Create | Main skill documentation and workflows | None |
-| `~/.codex/skills/1password-secrets/secret-patterns.json` | Create | Secret detection patterns database | None |
+| `~/.claude/skills/1password-secrets.md` | Create | Main skill documentation and workflows | None |
+| `~/.docs/1password-skill/secret-patterns.json` | Create | Secret detection patterns database | None |
 | `~/.docs/1password-skill/examples/` | Create | Example templates and conversions | None |
 
 ### Skill File Structure
 
 ```markdown
-~/.codex/skills/1password-secrets/SKILL.md
+~/.claude/skills/1password-secrets.md
 ├── Overview and Purpose
 ├── Prerequisites (op CLI installation)
 ├── Workflow 1: Detect Secrets
@@ -218,7 +218,7 @@ The skill enforces the user's AGENTS.md mandate: "never overwrite .env files, us
 **Purpose:** Implement secret detection functionality
 **Deployable:** Yes (read-only operations)
 
-1. Create `~/.codex/skills/1password-secrets/SKILL.md`
+1. Create `~/.claude/skills/1password-secrets.md`
 2. Document skill purpose and prerequisites
 3. Implement "Workflow 1: Detect Secrets" section:
    - Check `op` CLI is installed (`which op`)
