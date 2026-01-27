@@ -1,155 +1,34 @@
-# Codex Skills
+# [ARCHIVED] Codex Skills
 
-Engineering skills for disciplined Rust/WebAssembly development with [OpenAI Codex CLI](https://github.com/openai/codex).
+> **This repository has been archived.** All skills have been consolidated into the canonical [terraphim/terraphim-skills](https://github.com/terraphim/terraphim-skills) repository.
 
-## Installation
+## Migration
 
-### Global Installation (All Projects)
-
-```bash
-# Clone the repository
-git clone https://github.com/terraphim/codex-skills.git
-
-# Copy skills to Codex home directory
-cp -r codex-skills/skills/* ~/.codex/skills/
-```
-
-### Per-Project Installation
+Use the new unified installation:
 
 ```bash
-# Copy to project's .codex directory
-mkdir -p .codex/skills
-cp -r codex-skills/skills/* .codex/skills/
+# Install via skills.sh (recommended)
+npx skills add terraphim/terraphim-skills
+
+# Or install specific skills
+npx skills add terraphim/terraphim-skills --skill architecture --skill implementation
 ```
 
-### Using Skill Installer
+The skills CLI installs to all supported agents including Codex.
 
-If you have the `$skill-installer` skill available:
+## Why the change?
 
-```
-$skill-installer terraphim/codex-skills
-```
+- **Single source of truth**: One canonical repository for all platforms
+- **skills.sh compatibility**: Easy installation via `npx skills add`
+- **Automatic updates**: Stay current across all coding agents
+- **Reduced maintenance**: No sync issues between repos
 
-## Usage
+## New Repository
 
-Skills are automatically discovered by Codex CLI. Use them explicitly with `$skill-name` or let Codex select them implicitly based on your task.
+All 32+ engineering skills are now available at:
 
-```bash
-# List available skills
-codex /skills
+**[terraphim/terraphim-skills](https://github.com/terraphim/terraphim-skills)**
 
-# Use a skill explicitly in your prompt
-codex "use $disciplined-research to analyze this codebase"
-```
+---
 
-## Available Skills (32)
-
-### Disciplined Development (V-Model)
-
-| Skill | Phase | Description |
-|-------|-------|-------------|
-| `disciplined-research` | 1 | Deep problem understanding before design |
-| `disciplined-quality-evaluation` | 1.5 / 2.5 | KLS quality evaluation for research/design docs |
-| `disciplined-design` | 2 | Create implementation plans from research |
-| `disciplined-specification` | 2.5 | Probe specs through user interviews |
-| `disciplined-implementation` | 3 | Execute plans step by step with tests |
-| `disciplined-verification` | 4 | Unit/integration testing with traceability |
-| `disciplined-validation` | 5 | UAT and stakeholder sign-off |
-
-### Core Development
-
-| Skill | Description |
-|-------|-------------|
-| `architecture` | System design, ADRs, API planning (no code) |
-| `implementation` | Production-ready code with tests |
-| `testing` | Unit, integration, property-based tests |
-| `debugging` | Systematic root cause analysis |
-
-### Rust Expertise
-
-| Skill | Description |
-|-------|-------------|
-| `rust-development` | Idiomatic Rust patterns and ecosystem |
-| `rust-performance` | Profiling, benchmarking, optimization |
-
-### Quality & Security
-
-| Skill | Description |
-|-------|-------------|
-| `code-review` | Bug, security, performance feedback |
-| `security-audit` | Vulnerability assessment, unsafe code review |
-| `git-safety-guard` | Block destructive git/filesystem commands |
-| `quality-gate` | Orchestrates verification/validation |
-| `requirements-traceability` | REQ to test traceability matrix |
-| `acceptance-testing` | UAT plans and scenarios |
-| `visual-testing` | Visual regression testing |
-
-### Documentation & DevOps
-
-| Skill | Description |
-|-------|-------------|
-| `documentation` | API docs, README, guides |
-| `md-book` | MD-Book documentation sites |
-| `devops` | CI/CD, Docker, GitHub Actions |
-
-### Open Source
-
-| Skill | Description |
-|-------|-------------|
-| `open-source-contribution` | Quality PRs, good issues |
-| `community-engagement` | Release notes, contributor engagement |
-
-### Terraphim Integration
-
-| Skill | Description |
-|-------|-------------|
-| `terraphim-hooks` | Knowledge graph text replacement |
-| `session-search` | AI session history search |
-| `local-knowledge` | Personal notes search |
-
-### Desktop UI
-
-| Skill | Description |
-|-------|-------------|
-| `gpui-components` | GPUI components (Zed patterns) |
-
-### Infrastructure
-
-| Skill | Description |
-|-------|-------------|
-| `1password-secrets` | 1Password CLI secret management |
-| `caddy` | Caddy server configuration |
-| `xero` | Xero Accounting API integration |
-
-## Skill Discovery
-
-Codex loads skills by precedence (highest to lowest):
-
-| Scope | Location |
-|-------|----------|
-| Module | `.codex/skills/` in current directory |
-| Repository | `.codex/skills/` at repo root |
-| User | `~/.codex/skills/` |
-| System | `/etc/codex/skills/` |
-
-## Agents (V-Model Orchestrators)
-
-This repository also ships orchestrator agents in `agents/` to run full V-model workflows:
-
-- `left-side-of-v` — Research + Design with quality evaluation gates
-- `execution-orchestrator` — Implementation + quality evaluation + quality gate
-- `right-side-of-v` — Verification + Validation with defect loop-back
-
-Install agents by copying them to `~/.codex/agents/` or `.codex/agents/` at your repo root. Then select the agent using your CLI's agent/profile selection mechanism.
-
-## Related
-
-| Repository | Platform | Installation |
-|------------|----------|--------------|
-| [terraphim/codex-skills](https://github.com/terraphim/codex-skills) | OpenAI Codex CLI | `~/.codex/skills/` |
-| [terraphim/opencode-skills](https://github.com/terraphim/opencode-skills) | OpenCode | `~/.config/opencode/skill/` |
-| [terraphim/terraphim-skills](https://github.com/terraphim/terraphim-skills) | Claude Code | Plugin marketplace |
-
-## License
-
-Apache-2.0
+*This repository is kept for historical reference only. No new updates will be made here.*
